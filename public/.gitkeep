@@ -1,0 +1,2 @@
+# Garde le dossier public/ dans Git pour que le COPY du Dockerfile fonctionne,
+# meme sans assets statiques pour le moment.
