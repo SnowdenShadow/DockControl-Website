@@ -14,6 +14,11 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
+# URL publique du site : inlinée au build (variable NEXT_PUBLIC_*) pour les
+# balises canoniques/OG, le sitemap et le robots.txt. À surcharger via
+#   docker build --build-arg NEXT_PUBLIC_SITE_URL=https://votre-domaine.io
+ARG NEXT_PUBLIC_SITE_URL=http://localhost:3000
+ENV NEXT_PUBLIC_SITE_URL=${NEXT_PUBLIC_SITE_URL}
 RUN npm run build
 
 # ===== Stage 3 — runner : image finale minimale =====

@@ -3,6 +3,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        # URL publique inlinée au build (canonical, OG, sitemap, robots).
+        # Surcharge : NEXT_PUBLIC_SITE_URL=https://votre-domaine.io docker compose build
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-http://localhost:3000}
     image: dockcontrol-home:latest
     container_name: dockcontrol-home
     restart: unless-stopped

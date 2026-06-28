@@ -13,9 +13,11 @@ docker-compose.yml
 .design-ref
 README.md
 
-# Env local (ne jamais copier dans l'image)
-.env*.local
+# Env (ne jamais copier dans l'image — l'URL passe par un build-arg).
+# Next.js auto-charge .env, .env.production et .env.development au build :
+# on les exclut tous pour éviter qu'un fichier traînant ne fuite dans l'image.
 .env
+.env.*
 
 # Logs et divers
 npm-debug.log*
