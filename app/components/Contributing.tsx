@@ -1,8 +1,9 @@
 import { MONO, HEAD, ACCENT } from "../lib/style";
 import { GitHubIcon } from "../lib/icons";
 import { REPO_URL } from "../lib/data";
+import type { Dictionary } from "../i18n/types";
 
-export default function Contributing() {
+export default function Contributing({ dict }: { dict: Dictionary }) {
   return (
     <section
       style={{ maxWidth: 1180, margin: "0 auto", padding: "60px 32px 90px" }}
@@ -27,7 +28,7 @@ export default function Contributing() {
             marginBottom: 18,
           }}
         >
-          // Contribuer
+          {dict.contributing.kicker}
         </div>
         <h2
           style={{
@@ -39,7 +40,7 @@ export default function Contributing() {
             color: "#fbfcfa",
           }}
         >
-          Les PRs sont les bienvenues.
+          {dict.contributing.title}
         </h2>
         <p
           style={{
@@ -49,12 +50,11 @@ export default function Contributing() {
             maxWidth: 560,
           }}
         >
-          Ouvrez une issue avant tout changement plus gros qu&apos;une typo.{" "}
+          {dict.contributing.bodyBefore}
           <span style={{ fontFamily: MONO, color: "#cdcfc9" }}>
             pnpm install &amp;&amp; pnpm dev
-          </span>{" "}
-          depuis la racine pour une boucle de dev locale — l&apos;API et le
-          dashboard hot-reload indépendamment.
+          </span>
+          {dict.contributing.bodyAfter}
         </p>
         <div
           style={{
@@ -82,7 +82,7 @@ export default function Contributing() {
             }}
           >
             <GitHubIcon size={16} />
-            Voir le dépôt
+            {dict.contributing.ctaRepo}
           </a>
           <a
             href="#install"
@@ -99,7 +99,7 @@ export default function Contributing() {
               border: "1px solid rgba(255,255,255,.16)",
             }}
           >
-            Lire INSTALL.md
+            {dict.contributing.ctaInstall}
           </a>
         </div>
       </div>

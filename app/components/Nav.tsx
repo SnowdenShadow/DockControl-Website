@@ -1,8 +1,17 @@
 import { GitHubIcon } from "../lib/icons";
 import { MONO, HEAD, ACCENT } from "../lib/style";
 import { REPO_URL } from "../lib/data";
+import type { Dictionary } from "../i18n/types";
+import type { Locale } from "../i18n/config";
+import LangSwitcher from "./LangSwitcher";
 
-export default function Nav() {
+export default function Nav({
+  dict,
+  locale,
+}: {
+  dict: Dictionary;
+  locale: Locale;
+}) {
   return (
     <nav
       style={{
@@ -86,22 +95,23 @@ export default function Nav() {
             className="hl-nav dc-nav-text"
             style={{ fontSize: 14, color: "#a9aba6" }}
           >
-            Fonctionnalités
+            {dict.nav.features}
           </a>
           <a
             href="#compare"
             className="hl-nav dc-nav-text"
             style={{ fontSize: 14, color: "#a9aba6" }}
           >
-            Comparatif
+            {dict.nav.compare}
           </a>
           <a
             href="#install"
             className="hl-nav dc-nav-text"
             style={{ fontSize: 14, color: "#a9aba6" }}
           >
-            Installation
+            {dict.nav.install}
           </a>
+          <LangSwitcher locale={locale} label={dict.langSwitcher.label} />
           <a
             href={REPO_URL}
             target="_blank"

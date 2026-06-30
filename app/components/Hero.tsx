@@ -1,9 +1,10 @@
 import { MONO, HEAD, ACCENT } from "../lib/style";
 import { REPO_URL } from "../lib/data";
+import type { Dictionary } from "../i18n/types";
 import CopyButton from "./CopyButton";
 import DashboardMockup from "./DashboardMockup";
 
-export default function Hero() {
+export default function Hero({ dict }: { dict: Dictionary }) {
   return (
     <header id="top" style={{ position: "relative", overflow: "hidden" }}>
       {/* radial glow */}
@@ -66,7 +67,7 @@ export default function Hero() {
                 animation: "dcpulse 2.4s ease-in-out infinite",
               }}
             />
-            Open source · Licence MIT · Auto-hébergé
+            {dict.hero.badge}
           </div>
 
           <h1
@@ -80,9 +81,9 @@ export default function Hero() {
               color: "#fbfcfa",
             }}
           >
-            Votre VPS devient une
+            {dict.hero.titleLine1}
             <br />
-            plateforme de déploiement.
+            {dict.hero.titleLine2}
           </h1>
 
           <p
@@ -94,10 +95,7 @@ export default function Hero() {
               maxWidth: 520,
             }}
           >
-            DockControl est l&apos;alternative open-source à Heroku, Vercel et
-            Render. Installez-le sur votre propre matériel, pointez un domaine,
-            et pilotez vos apps, bases de données, SSL, monitoring et backups
-            depuis un seul dashboard — sans jamais ressortir le SSH.
+            {dict.hero.lead}
           </p>
 
           {/* install command */}
@@ -129,9 +127,9 @@ export default function Hero() {
                   letterSpacing: ".04em",
                 }}
               >
-                INSTALLATION · ROOT
+                {dict.hero.installLabel}
               </span>
-              <CopyButton />
+              <CopyButton dict={dict} />
             </div>
             <div
               style={{
@@ -158,8 +156,7 @@ export default function Hero() {
               margin: "12px 0 0",
             }}
           >
-            // installeur idempotent — re-lancez-le quand vous voulez, il
-            préserve .env.
+            {dict.hero.installNote}
           </p>
 
           <div
@@ -187,7 +184,7 @@ export default function Hero() {
                   "0 0 0 1px rgba(0,224,138,.3), 0 14px 30px -12px rgba(0,224,138,.55)",
               }}
             >
-              Guide d&apos;installation
+              {dict.hero.ctaGuide}
               <span style={{ fontFamily: MONO }}>→</span>
             </a>
             <a
@@ -207,13 +204,13 @@ export default function Hero() {
                 border: "1px solid rgba(255,255,255,.16)",
               }}
             >
-              Explorer le code
+              {dict.hero.ctaCode}
             </a>
           </div>
         </div>
 
         {/* right column — dashboard mockup */}
-        <DashboardMockup />
+        <DashboardMockup dict={dict} />
       </div>
     </header>
   );

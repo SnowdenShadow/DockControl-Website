@@ -1,7 +1,8 @@
 import { MONO, HEAD, ACCENT } from "../lib/style";
-import { features } from "../lib/data";
+import { featureIcons } from "../lib/data";
+import type { Dictionary } from "../i18n/types";
 
-export default function Features() {
+export default function Features({ dict }: { dict: Dictionary }) {
   return (
     <section
       id="features"
@@ -17,7 +18,7 @@ export default function Features() {
           marginBottom: 16,
         }}
       >
-        // Fonctionnalités
+        {dict.features.kicker}
       </div>
       <h2
         style={{
@@ -31,7 +32,7 @@ export default function Features() {
           color: "#fbfcfa",
         }}
       >
-        Tout ce qu&apos;un PaaS vous donne — sur votre propre infra.
+        {dict.features.title}
       </h2>
       <p
         style={{
@@ -41,12 +42,11 @@ export default function Features() {
           maxWidth: 600,
         }}
       >
-        Du déploiement Git aux backups chiffrés, en passant par le SSL et le
-        monitoring. Sans abonnement à l&apos;usage, sans facture surprise.
+        {dict.features.subtitle}
       </p>
 
       <div className="dc-features-grid">
-        {features.map((f) => (
+        {dict.features.items.map((f, i) => (
           <div
             key={f.title}
             className="hl-feature"
@@ -74,7 +74,7 @@ export default function Features() {
                 justifyContent: "center",
               }}
             >
-              {f.icon}
+              {featureIcons[i]}
             </div>
             <h3
               style={{

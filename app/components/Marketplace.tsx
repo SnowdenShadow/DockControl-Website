@@ -1,7 +1,8 @@
 import { MONO, HEAD, ACCENT } from "../lib/style";
 import { apps } from "../lib/data";
+import type { Dictionary } from "../i18n/types";
 
-export default function Marketplace() {
+export default function Marketplace({ dict }: { dict: Dictionary }) {
   return (
     <section style={{ maxWidth: 1180, margin: "0 auto", padding: "60px 32px" }}>
       <div className="dc-market-grid">
@@ -16,7 +17,7 @@ export default function Marketplace() {
               marginBottom: 16,
             }}
           >
-            // Marketplace
+            {dict.marketplace.kicker}
           </div>
           <h2
             style={{
@@ -28,14 +29,14 @@ export default function Marketplace() {
               color: "#fbfcfa",
             }}
           >
-            Des stacks prêtes en un clic.
+            {dict.marketplace.title}
           </h2>
           <p style={{ fontSize: 16, color: "#9b9e97", margin: 0 }}>
-            Chaque app de la marketplace est générée en Docker&nbsp;Compose sous{" "}
+            {dict.marketplace.bodyBefore}
             <span style={{ fontFamily: MONO, color: "#bcbeb8" }}>
               .dockcontrol/apps/
-            </span>{" "}
-            — versionnable, lisible, et 100% sous votre contrôle.
+            </span>
+            {dict.marketplace.bodyAfter}
           </p>
         </div>
         <div className="dc-market-apps">

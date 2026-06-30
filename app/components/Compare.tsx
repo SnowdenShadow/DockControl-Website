@@ -1,7 +1,7 @@
 import { MONO, HEAD, ACCENT } from "../lib/style";
-import { rows } from "../lib/data";
+import type { Dictionary } from "../i18n/types";
 
-export default function Compare() {
+export default function Compare({ dict }: { dict: Dictionary }) {
   return (
     <section
       id="compare"
@@ -17,7 +17,7 @@ export default function Compare() {
           marginBottom: 16,
         }}
       >
-        // Comparatif
+        {dict.compare.kicker}
       </div>
       <h2
         style={{
@@ -29,7 +29,7 @@ export default function Compare() {
           color: "#fbfcfa",
         }}
       >
-        DockControl vs le PaaS managé
+        {dict.compare.title}
       </h2>
       <div
         style={{
@@ -63,7 +63,7 @@ export default function Compare() {
                     borderBottom: "1px solid rgba(255,255,255,.08)",
                   }}
                 >
-                  CRITÈRE
+                  {dict.compare.colCriteria}
                 </th>
                 <th
                   scope="col"
@@ -95,12 +95,12 @@ export default function Compare() {
                     borderLeft: "1px solid rgba(255,255,255,.06)",
                   }}
                 >
-                  Heroku / Vercel / Render
+                  {dict.compare.colThem}
                 </th>
               </tr>
             </thead>
             <tbody>
-              {rows.map((r) => (
+              {dict.compare.rows.map((r) => (
                 <tr key={r.k}>
                   <th
                     scope="row"

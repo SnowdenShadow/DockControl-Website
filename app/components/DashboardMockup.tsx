@@ -1,17 +1,13 @@
 import { MONO, HEAD, ACCENT } from "../lib/style";
-
-const navItems = [
-  { label: "Apps", active: true },
-  { label: "Déploiements", active: false },
-  { label: "Bases", active: false },
-  { label: "Domaines", active: false },
-  { label: "Monitoring", active: false },
-  { label: "Backups", active: false },
-];
+import type { Dictionary } from "../i18n/types";
 
 const bars = [42, 60, 38, 72, 55, 48, 80, 34, 50, 66];
 
-export default function DashboardMockup() {
+export default function DashboardMockup({ dict }: { dict: Dictionary }) {
+  const navItems = dict.mockup.nav.map((label, i) => ({
+    label,
+    active: i === 0,
+  }));
   return (
     // Purely decorative product illustration — hidden from assistive tech so
     // the fake dashboard labels aren't announced as real content.
@@ -139,7 +135,7 @@ export default function DashboardMockup() {
                   borderRadius: 6,
                 }}
               >
-                tout opérationnel
+                {dict.mockup.statusAll}
               </span>
             </div>
 
@@ -189,7 +185,7 @@ export default function DashboardMockup() {
                   }}
                 >
                   <span style={{ width: 6, height: 6, borderRadius: "50%", background: ACCENT }} />
-                  live
+                  {dict.mockup.live}
                 </span>
               </div>
 
@@ -238,7 +234,7 @@ export default function DashboardMockup() {
                   }}
                 >
                   <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#febc2e" }} />
-                  build
+                  {dict.mockup.build}
                 </span>
               </div>
             </div>
@@ -262,7 +258,7 @@ export default function DashboardMockup() {
                   color: "#74776f",
                 }}
               >
-                <span>CPU · 60 min</span>
+                <span>{dict.mockup.cpuLabel}</span>
                 <span style={{ color: ACCENT }}>23%</span>
               </div>
               <div style={{ display: "flex", alignItems: "flex-end", gap: 3, height: 38 }}>

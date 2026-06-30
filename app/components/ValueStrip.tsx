@@ -1,8 +1,9 @@
 import { MONO, HEAD } from "../lib/style";
+import type { Dictionary } from "../i18n/types";
 
 const replaces = ["Heroku", "Vercel", "Render"];
 
-export default function ValueStrip() {
+export default function ValueStrip({ dict }: { dict: Dictionary }) {
   return (
     <section
       style={{
@@ -29,7 +30,7 @@ export default function ValueStrip() {
             letterSpacing: ".04em",
           }}
         >
-          REMPLACE
+          {dict.valueStrip.replaces}
         </span>
         {replaces.map((name, i) => (
           <span key={name} style={{ display: "contents" }}>
@@ -54,7 +55,7 @@ export default function ValueStrip() {
             color: "#9b9e97",
           }}
         >
-          → vos serveurs, vos données, zéro lock-in.
+          {dict.valueStrip.tagline}
         </span>
       </div>
     </section>

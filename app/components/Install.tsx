@@ -1,17 +1,9 @@
 import { MONO, HEAD, ACCENT } from "../lib/style";
-import { reqs } from "../lib/data";
+import type { Dictionary } from "../i18n/types";
 
-const steps = [
-  <>VPS Ubuntu/Debian frais, connecté en root.</>,
-  <>Collez la commande d&apos;installation ci-dessous.</>,
-  <>
-    Ouvrez le dashboard sur{" "}
-    <span style={{ fontFamily: MONO, color: "#bcbeb8" }}>:3000</span>, pointez un
-    domaine.
-  </>,
-];
-
-export default function Install() {
+export default function Install({ dict }: { dict: Dictionary }) {
+  const reqs = dict.install.reqs;
+  const steps = dict.install.steps;
   return (
     <section
       id="install"
@@ -36,7 +28,7 @@ export default function Install() {
               marginBottom: 18,
             }}
           >
-            // Prérequis
+            {dict.install.reqsKicker}
           </div>
           <h2
             style={{
@@ -47,7 +39,7 @@ export default function Install() {
               color: "#fbfcfa",
             }}
           >
-            Ce qu&apos;il vous faut
+            {dict.install.reqsTitle}
           </h2>
           <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
             {reqs.map((q, i) => (
@@ -98,7 +90,7 @@ export default function Install() {
               marginBottom: 18,
             }}
           >
-            // Quick install
+            {dict.install.quickKicker}
           </div>
           <h2
             style={{
@@ -109,7 +101,7 @@ export default function Install() {
               color: "#fbfcfa",
             }}
           >
-            Trois lignes, et c&apos;est en ligne
+            {dict.install.quickTitle}
           </h2>
           <ol
             style={{

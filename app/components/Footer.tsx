@@ -1,5 +1,6 @@
 import { MONO, HEAD, ACCENT } from "../lib/style";
 import { REPO_URL } from "../lib/data";
+import type { Dictionary } from "../i18n/types";
 
 const links = [
   { label: "INSTALL.md", href: "#" },
@@ -8,7 +9,7 @@ const links = [
   { label: "GitHub", href: REPO_URL },
 ];
 
-export default function Footer() {
+export default function Footer({ dict }: { dict: Dictionary }) {
   return (
     <footer style={{ borderTop: "1px solid rgba(255,255,255,.06)" }}>
       <div
@@ -48,7 +49,7 @@ export default function Footer() {
           </span>
         </span>
         <span style={{ fontFamily: MONO, fontSize: 12, color: "#6e716a" }}>
-          PaaS auto-hébergé · MIT
+          {dict.footer.tagline}
         </span>
         <div
           style={{

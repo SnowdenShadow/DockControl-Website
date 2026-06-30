@@ -1,13 +1,10 @@
 import { HEAD, MONO, ACCENT } from "../lib/style";
 import { GitHubIcon } from "../lib/icons";
+import type { Dictionary } from "../i18n/types";
 
-const badges = [
-  { mark: "MIT", text: "Forkez et redistribuez librement" },
-  { mark: "{ }", text: "Code auditable, zéro télémétrie" },
-  { mark: "$0", text: "Aucune licence, payez juste votre VPS" },
-];
+const badgeMarks = ["MIT", "{ }", "$0"];
 
-export default function OpenSource() {
+export default function OpenSource({ dict }: { dict: Dictionary }) {
   return (
     <section style={{ maxWidth: 1180, margin: "0 auto", padding: "52px 32px" }}>
       <div
@@ -48,7 +45,7 @@ export default function OpenSource() {
               }}
             >
               <GitHubIcon size={16} />
-              100% OPEN SOURCE
+              {dict.openSource.kicker}
             </div>
             <h2
               style={{
@@ -61,9 +58,9 @@ export default function OpenSource() {
                 color: "#fbfcfa",
               }}
             >
-              Sous licence MIT.
+              {dict.openSource.titleLine1}
               <br />
-              Sans contrepartie.
+              {dict.openSource.titleLine2}
             </h2>
             <p
               style={{
@@ -73,16 +70,13 @@ export default function OpenSource() {
                 maxWidth: 480,
               }}
             >
-              Utilisez-le, forkez-le, faites-le tourner en production
-              commerciale. Le code est entièrement public, auditable, et
-              n&apos;envoie rien d&apos;autre que ce que vous configurez. Pas de
-              télémétrie cachée, pas de plan « Enterprise » verrouillé.
+              {dict.openSource.body}
             </p>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            {badges.map((b) => (
+            {badgeMarks.map((mark, i) => (
               <div
-                key={b.mark}
+                key={mark}
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -100,9 +94,11 @@ export default function OpenSource() {
                     color: ACCENT,
                   }}
                 >
-                  {b.mark}
+                  {mark}
                 </span>
-                <span style={{ fontSize: 13.5, color: "#bcbeb8" }}>{b.text}</span>
+                <span style={{ fontSize: 13.5, color: "#bcbeb8" }}>
+                  {dict.openSource.badges[i]}
+                </span>
               </div>
             ))}
           </div>

@@ -3,8 +3,9 @@
 import { useState, useRef, useEffect } from "react";
 import { INSTALL_CMD } from "../lib/data";
 import { MONO, ACCENT } from "../lib/style";
+import type { Dictionary } from "../i18n/types";
 
-export default function CopyButton() {
+export default function CopyButton({ dict }: { dict: Dictionary }) {
   const [copied, setCopied] = useState(false);
   const timer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
@@ -23,7 +24,7 @@ export default function CopyButton() {
     <button
       type="button"
       onClick={onCopy}
-      aria-label="Copier la commande d'installation"
+      aria-label={dict.copy.aria}
       className="hl-copy"
       style={{
         marginLeft: "auto",
@@ -40,7 +41,7 @@ export default function CopyButton() {
         cursor: "pointer",
       }}
     >
-      {copied ? "copié ✓" : "copier"}
+      {copied ? dict.copy.done : dict.copy.idle}
     </button>
   );
 }
