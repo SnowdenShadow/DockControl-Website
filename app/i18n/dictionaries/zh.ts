@@ -143,7 +143,7 @@ const zh: Dictionary = {
     kicker: "// 贡献",
     title: "欢迎提交 PR。",
     bodyBefore:
-      "在做出任何比错别字更大的改动前，先开一个 issue。",
+      "在做出任何比错别字更大的改动前，先开一个 issue。 ",
     bodyAfter:
       " 在根目录运行即可获得本地开发循环——API 与仪表盘各自独立热重载。",
     ctaRepo: "查看仓库",

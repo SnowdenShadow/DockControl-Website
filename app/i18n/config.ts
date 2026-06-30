@@ -60,6 +60,6 @@ export const localeMeta: Record<
   tr: { label: "Türkçe", htmlLang: "tr", ogLocale: "tr_TR" },
   zh: { label: "中文", htmlLang: "zh", ogLocale: "zh_CN" },
   ja: { label: "日本語", htmlLang: "ja", ogLocale: "ja_JP" },
-  ar: { label: "العربية", htmlLang: "ar", ogLocale: "ar_AR" },
+  ar: { label: "العربية", htmlLang: "ar", ogLocale: "ar_SA" },
   ko: { label: "한국어", htmlLang: "ko", ogLocale: "ko_KR" },
 };

@@ -114,9 +114,10 @@ export default function BackgroundMusic({
         <button
           type="button"
           onClick={toggle}
-          aria-label={playing ? dict.music.on : dict.music.off}
+          // L'action décrit ce que fait le clic : couper si ça joue, lancer sinon.
+          aria-label={playing ? dict.music.off : dict.music.on}
           aria-pressed={playing}
-          title={playing ? dict.music.on : dict.music.off}
+          title={playing ? dict.music.off : dict.music.on}
           style={{
             position: "fixed",
             insetInlineEnd: 18,

@@ -4,7 +4,7 @@ const de: Dictionary = {
   meta: {
     title: "DockControl — Verwandle deinen VPS in eine Deployment-Plattform",
     description:
-      "Die Open-Source-Alternative zu Heroku, Vercel und Render: Installiere sie auf deinem VPS, verbinde eine Domain und steuere Apps, Datenbanken, SSL und Backups — ohne SSH.",
+      "Die Open-Source-Alternative zu Heroku, Vercel und Render: auf deinem VPS installieren, Domain verbinden, Apps, Datenbanken, SSL und Backups steuern — ohne SSH.",
     ogDescription:
       "Die Open-Source-Alternative zu Heroku, Vercel und Render. Deine Server, deine Daten, null Lock-in.",
   },

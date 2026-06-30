@@ -106,7 +106,7 @@ export default function LangSwitcher({
           style={{
             position: "absolute",
             top: "calc(100% + 8px)",
-            right: 0,
+            insetInlineEnd: 0,
             zIndex: 60,
             margin: 0,
             padding: 6,

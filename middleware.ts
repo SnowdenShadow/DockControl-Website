@@ -17,8 +17,11 @@ function parseAcceptLanguage(header: string | null): string | undefined {
   const ranked = header
     .split(",")
     .map((part) => {
-      const [tag, q] = part.trim().split(";q=");
-      return { tag: tag.toLowerCase(), q: q ? parseFloat(q) : 1 };
+      // Tolère les espaces autour du « ;q= » (certains proxies en émettent).
+      const [tag, ...rest] = part.trim().split(";");
+      const qPart = rest.find((s) => s.trim().startsWith("q="));
+      const q = qPart ? parseFloat(qPart.split("=")[1]) : 1;
+      return { tag: tag.trim().toLowerCase(), q: Number.isNaN(q) ? 0 : q };
     })
     .sort((a, b) => b.q - a.q);
 
@@ -71,7 +74,11 @@ export function middleware(request: NextRequest) {
 export const config = {
   // On exclut les fichiers de métadonnées, assets et routes internes Next :
   // tout le reste passe par la détection de langue.
+  // Exclusions ancrées sur un segment complet (/ ou fin), pour qu'une future
+  // route comme /iconography ou /api-status reçoive bien la détection de langue.
+  // Les fichiers à extension (robots.txt, sitemap.xml…) sont couverts par .*\..*
+  // ; icon/apple-icon sont servis sans extension donc gardés explicitement.
   matcher: [
-    "/((?!_next|api|.*\\..*|robots.txt|sitemap.xml|manifest.webmanifest|icon|apple-icon|opengraph-image|twitter-image).*)",
+    "/((?!_next/|api/|.*\\..*|icon$|icon/|apple-icon$|apple-icon/|opengraph-image$|opengraph-image/|twitter-image$|twitter-image/).*)",
   ],
 };
