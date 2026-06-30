@@ -69,6 +69,7 @@ export default function Nav({
             DockControl
           </span>
           <span
+            className="dc-nav-badge"
             style={{
               fontFamily: MONO,
               fontSize: 10,
@@ -130,7 +131,7 @@ export default function Nav({
             }}
           >
             <GitHubIcon size={15} />
-            GitHub
+            <span className="dc-nav-text">GitHub</span>
           </a>
         </div>
       </div>
