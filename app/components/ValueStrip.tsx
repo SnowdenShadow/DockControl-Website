@@ -15,7 +15,7 @@ export default function ValueStrip({ dict }: { dict: Dictionary }) {
         style={{
           maxWidth: 1180,
           margin: "0 auto",
-          padding: "26px 32px",
+          padding: "26px clamp(20px, 5vw, 32px)",
           display: "flex",
           flexWrap: "wrap",
           alignItems: "center",

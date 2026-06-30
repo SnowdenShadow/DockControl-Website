@@ -6,13 +6,17 @@ import type { Dictionary } from "../i18n/types";
 export default function Contributing({ dict }: { dict: Dictionary }) {
   return (
     <section
-      style={{ maxWidth: 1180, margin: "0 auto", padding: "60px 32px 90px" }}
+      style={{
+        maxWidth: 1180,
+        margin: "0 auto",
+        padding: "60px clamp(20px, 5vw, 32px) 90px",
+      }}
     >
       <div
         style={{
           border: "1px solid rgba(255,255,255,.08)",
           borderRadius: 18,
-          padding: "52px 44px",
+          padding: "clamp(34px, 6vw, 52px) clamp(22px, 4vw, 44px)",
           textAlign: "center",
           background:
             "radial-gradient(600px 280px at 50% 0%, rgba(0,224,138,.08), transparent 65%)",
@@ -34,7 +38,7 @@ export default function Contributing({ dict }: { dict: Dictionary }) {
           style={{
             fontFamily: HEAD,
             fontWeight: 600,
-            fontSize: 36,
+            fontSize: "clamp(26px, 5vw, 36px)",
             letterSpacing: "-.02em",
             margin: "0 0 16px",
             color: "#fbfcfa",

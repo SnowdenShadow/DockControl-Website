@@ -4,7 +4,13 @@ import type { Dictionary } from "../i18n/types";
 
 export default function Marketplace({ dict }: { dict: Dictionary }) {
   return (
-    <section style={{ maxWidth: 1180, margin: "0 auto", padding: "60px 32px" }}>
+    <section
+      style={{
+        maxWidth: 1180,
+        margin: "0 auto",
+        padding: "60px clamp(20px, 5vw, 32px)",
+      }}
+    >
       <div className="dc-market-grid">
         <div>
           <div
@@ -23,7 +29,7 @@ export default function Marketplace({ dict }: { dict: Dictionary }) {
             style={{
               fontFamily: HEAD,
               fontWeight: 600,
-              fontSize: 32,
+              fontSize: "clamp(25px, 5vw, 32px)",
               letterSpacing: "-.02em",
               margin: "0 0 14px",
               color: "#fbfcfa",

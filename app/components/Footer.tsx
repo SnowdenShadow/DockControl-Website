@@ -16,7 +16,7 @@ export default function Footer({ dict }: { dict: Dictionary }) {
         style={{
           maxWidth: 1180,
           margin: "0 auto",
-          padding: "34px 32px",
+          padding: "34px clamp(20px, 5vw, 32px)",
           display: "flex",
           flexWrap: "wrap",
           alignItems: "center",

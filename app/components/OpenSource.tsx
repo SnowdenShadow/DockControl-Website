@@ -6,7 +6,13 @@ const badgeMarks = ["MIT", "{ }", "$0"];
 
 export default function OpenSource({ dict }: { dict: Dictionary }) {
   return (
-    <section style={{ maxWidth: 1180, margin: "0 auto", padding: "52px 32px" }}>
+    <section
+      style={{
+        maxWidth: 1180,
+        margin: "0 auto",
+        padding: "52px clamp(20px, 5vw, 32px)",
+      }}
+    >
       <div
         style={{
           position: "relative",
@@ -15,7 +21,7 @@ export default function OpenSource({ dict }: { dict: Dictionary }) {
           borderRadius: 18,
           background:
             "linear-gradient(120deg, rgba(0,224,138,.08), rgba(0,224,138,.015) 55%, transparent)",
-          padding: "46px 44px",
+          padding: "clamp(28px, 5vw, 46px) clamp(22px, 4vw, 44px)",
         }}
       >
         <div
@@ -51,7 +57,7 @@ export default function OpenSource({ dict }: { dict: Dictionary }) {
               style={{
                 fontFamily: HEAD,
                 fontWeight: 600,
-                fontSize: 33,
+                fontSize: "clamp(25px, 5vw, 33px)",
                 lineHeight: 1.12,
                 letterSpacing: "-.02em",
                 margin: "0 0 14px",

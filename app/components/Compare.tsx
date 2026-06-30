@@ -5,7 +5,11 @@ export default function Compare({ dict }: { dict: Dictionary }) {
   return (
     <section
       id="compare"
-      style={{ maxWidth: 1180, margin: "0 auto", padding: "60px 32px" }}
+      style={{
+        maxWidth: 1180,
+        margin: "0 auto",
+        padding: "60px clamp(20px, 5vw, 32px)",
+      }}
     >
       <div
         style={{
@@ -23,7 +27,7 @@ export default function Compare({ dict }: { dict: Dictionary }) {
         style={{
           fontFamily: HEAD,
           fontWeight: 600,
-          fontSize: 34,
+          fontSize: "clamp(25px, 5vw, 34px)",
           letterSpacing: "-.02em",
           margin: "0 0 36px",
           color: "#fbfcfa",

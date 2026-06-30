@@ -28,7 +28,7 @@ export default function Nav({
         style={{
           maxWidth: 1180,
           margin: "0 auto",
-          padding: "0 32px",
+          padding: "0 clamp(16px, 5vw, 32px)",
           height: 64,
           display: "flex",
           alignItems: "center",
@@ -87,7 +87,7 @@ export default function Nav({
             marginLeft: "auto",
             display: "flex",
             alignItems: "center",
-            gap: 28,
+            gap: "clamp(12px, 3vw, 28px)",
           }}
         >
           <a

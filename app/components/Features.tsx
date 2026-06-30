@@ -6,7 +6,11 @@ export default function Features({ dict }: { dict: Dictionary }) {
   return (
     <section
       id="features"
-      style={{ maxWidth: 1180, margin: "0 auto", padding: "92px 32px 40px" }}
+      style={{
+        maxWidth: 1180,
+        margin: "0 auto",
+        padding: "clamp(60px, 12vw, 92px) clamp(20px, 5vw, 32px) 40px",
+      }}
     >
       <div
         style={{
@@ -24,7 +28,7 @@ export default function Features({ dict }: { dict: Dictionary }) {
         style={{
           fontFamily: HEAD,
           fontWeight: 600,
-          fontSize: 38,
+          fontSize: "clamp(27px, 5vw, 38px)",
           lineHeight: 1.1,
           letterSpacing: "-.02em",
           margin: "0 0 14px",

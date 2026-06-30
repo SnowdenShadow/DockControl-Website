@@ -36,7 +36,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
           position: "relative",
           maxWidth: 1180,
           margin: "0 auto",
-          padding: "84px 32px 64px",
+          padding: "clamp(56px, 11vw, 84px) clamp(20px, 5vw, 32px) 64px",
         }}
       >
         {/* left column */}
@@ -74,7 +74,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
             style={{
               fontFamily: HEAD,
               fontWeight: 600,
-              fontSize: 53,
+              fontSize: "clamp(34px, 7vw, 53px)",
               lineHeight: 1.04,
               letterSpacing: "-.025em",
               margin: "0 0 22px",

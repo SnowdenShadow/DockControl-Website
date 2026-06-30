@@ -7,7 +7,11 @@ export default function Install({ dict }: { dict: Dictionary }) {
   return (
     <section
       id="install"
-      style={{ maxWidth: 1180, margin: "0 auto", padding: "60px 32px 40px" }}
+      style={{
+        maxWidth: 1180,
+        margin: "0 auto",
+        padding: "60px clamp(20px, 5vw, 32px) 40px",
+      }}
     >
       <div className="dc-install-grid">
         {/* requirements */}
@@ -15,7 +19,7 @@ export default function Install({ dict }: { dict: Dictionary }) {
           style={{
             border: "1px solid rgba(255,255,255,.08)",
             borderRadius: 16,
-            padding: 32,
+            padding: "clamp(22px, 4vw, 32px)",
           }}
         >
           <div
@@ -75,7 +79,7 @@ export default function Install({ dict }: { dict: Dictionary }) {
           style={{
             border: "1px solid rgba(0,224,138,.2)",
             borderRadius: 16,
-            padding: 32,
+            padding: "clamp(22px, 4vw, 32px)",
             background:
               "linear-gradient(180deg, rgba(0,224,138,.05), transparent 40%)",
           }}
