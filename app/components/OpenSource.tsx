@@ -24,19 +24,6 @@ export default function OpenSource({ dict }: { dict: Dictionary }) {
           padding: "clamp(28px, 5vw, 46px) clamp(22px, 4vw, 44px)",
         }}
       >
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage:
-              "linear-gradient(rgba(0,224,138,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,224,138,.05) 1px, transparent 1px)",
-            backgroundSize: "34px 34px",
-            maskImage: "radial-gradient(400px 200px at 90% 0%, #000, transparent)",
-            WebkitMaskImage:
-              "radial-gradient(400px 200px at 90% 0%, #000, transparent)",
-            pointerEvents: "none",
-          }}
-        />
         <div className="dc-os-grid" style={{ position: "relative" }}>
           <div>
             <div

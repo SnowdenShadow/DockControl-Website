@@ -45,7 +45,6 @@ export default function Nav({
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              boxShadow: "0 0 18px rgba(0,224,138,.35)",
             }}
           >
             <span

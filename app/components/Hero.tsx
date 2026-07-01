@@ -7,26 +7,14 @@ import DashboardMockup from "./DashboardMockup";
 export default function Hero({ dict }: { dict: Dictionary }) {
   return (
     <header id="top" style={{ position: "relative", overflow: "hidden" }}>
-      {/* radial glow */}
+      {/* Soft off-center wash — dialed down from the original neon halo so it
+         reads as ambient light rather than the default "AI landing" glow. */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(900px 420px at 78% -8%, rgba(0,224,138,.13), transparent 60%), radial-gradient(700px 500px at 8% 10%, rgba(0,224,138,.05), transparent 55%)",
-          pointerEvents: "none",
-        }}
-      />
-      {/* grid overlay */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px)",
-          backgroundSize: "46px 46px",
-          maskImage: "linear-gradient(#000, transparent 78%)",
-          WebkitMaskImage: "linear-gradient(#000, transparent 78%)",
+            "radial-gradient(1100px 520px at 82% -12%, rgba(0,224,138,.07), transparent 62%)",
           pointerEvents: "none",
         }}
       />
@@ -181,7 +169,7 @@ export default function Hero({ dict }: { dict: Dictionary }) {
                 padding: "13px 22px",
                 borderRadius: 10,
                 boxShadow:
-                  "0 0 0 1px rgba(0,224,138,.3), 0 14px 30px -12px rgba(0,224,138,.55)",
+                  "0 0 0 1px rgba(0,224,138,.22), 0 12px 26px -14px rgba(0,224,138,.35)",
               }}
             >
               {dict.hero.ctaGuide}
